@@ -1,52 +1,27 @@
-.bgcolor-E1DBC9 {
-  background: #e1dbc9;
+.logo {
+  background-color: #444;
+  color: #fff;
 }
 
-.bgcolor-C5BFB0 {
-  background: #c5bfb0;
+.heading {
+  color: #000;
 }
 
-.bgcolor-3F3724 {
-  background: #3f3724;
+.text {
+  color: #000;
 }
 
-.bgcolor-1586BF {
-  background: #1586bf;
+.header {
+  background-color: #ddd;
 }
 
-.bgcolor-746643 {
-  background: #746643;
+.main {
+  background-color: #fff;
 }
 
-.bgcolor-062737 {
-  background: #062737;
-}
-
-.bgcolor-3F5466 {
-  background: #3f5466;
-}
-
-.bgcolor-E1DBC9 {
-  background: #e1dbc9;
-}
-
-.bgcolor-F1BD3D {
-  background: #f1bd3d;
-}
-
-.color-sample {
-  float: right;
-}
-
-.color-sample ul, .color-sample li {
-  list-style: none;
-  color: white;
-  padding: 0;
-}
-
-.color-sample li {
-  padding: 10px;
-}
+/* ========================= */
+/* ここから下は使わないです　*/
+/* ========================= */
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -560,180 +535,53 @@ body {
   margin: 0 10px;
 }
 
-.grid {
-  width: 83.13253%;
-  float: left;
-  margin-right: 1.20482%;
-  display: inline;
-  *zoom: 1;
+.bgcolor-E1DBC9 {
+  background: #e1dbc9;
 }
 
-.grid:after {
-  content: "";
-  display: table;
-  clear: both;
+.bgcolor-C5BFB0 {
+  background: #c5bfb0;
 }
 
-.grid .toc-block {
-  width: 31.70732%;
-  float: left;
-  margin-right: 2.43902%;
-  display: inline;
-  padding: 1em 0;
+.bgcolor-3F3724 {
+  background: #3f3724;
 }
 
-.grid .toc-block:nth-child(3n) {
+.bgcolor-1586BF {
+  background: #1586bf;
+}
+
+.bgcolor-746643 {
+  background: #746643;
+}
+
+.bgcolor-062737 {
+  background: #062737;
+}
+
+.bgcolor-3F5466 {
+  background: #3f5466;
+}
+
+.bgcolor-E1DBC9 {
+  background: #e1dbc9;
+}
+
+.bgcolor-F1BD3D {
+  background: #f1bd3d;
+}
+
+.color-sample {
   float: right;
-  margin-right: 0;
 }
 
-.grid .toc-block:nth-child(3n+1) {
-  clear: left;
+.color-sample ul, .color-sample li {
+  list-style: none;
+  color: white;
+  padding: 0;
 }
 
-pre .comment, pre .template_comment, pre .diff .header, pre .doctype, pre .lisp .string, pre .javadoc {
-  color: #93a1a1;
-  font-style: italic;
+.color-sample li {
+  padding: 10px;
 }
 
-pre .keyword, pre .css .rule .keyword, pre .winutils, pre .javascript .title, pre .method, pre .addition, pre .css .tag, pre .lisp .title {
-  color: #859900;
-}
-
-pre .number, pre .command, pre .string, pre .tag .value, pre .phpdoc, pre .tex .formula, pre .regexp, pre .hexcolor {
-  color: #2aa198;
-}
-
-pre .title, pre .localvars, pre .function .title, pre .chunk, pre .decorator, pre .builtin, pre .built_in, pre .lisp .title, pre .identifier, pre .title .keymethods, pre .id {
-  color: #268bd2;
-}
-
-pre .attribute, pre .variable, pre .instancevar, pre .lisp .body, pre .smalltalk .number, pre .constant, pre .class .title, pre .parent, pre .haskell .label {
-  color: #b58900;
-}
-
-pre .preprocessor, pre .pi, pre .shebang, pre .symbol, pre .diff .change, pre .special, pre .keymethods, pre .attr_selector, pre .important, pre .subst, pre .cdata {
-  color: #cb4b16;
-}
-
-pre .deletion {
-  color: #dc322f;
-}
-
-pre .tex .formula {
-  background: #eee8d5;
-}
-
-@media screen and (max-width: 660px) {
-  #support .donate, #support .one {
-    float: none;
-    width: auto;
-    margin-right: auto;
-    #margin-left: auto;
-    display: block;
-  }
-
-  #footer .link {
-    display: inline;
-    float: left;
-  }
-}
-@media screen and (max-width: 660px) {
-  #header h1 {
-    bottom: -22px;
-    width: 180px;
-    left: 0;
-  }
-
-  #header h1 .logo {
-    width: 100%;
-    text-align: center;
-    background: #002b36;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
-    border-radius: 0;
-  }
-
-  #header h1 .logo img {
-    width: 180px;
-    height: 180px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
-
-  #header p {
-    display: none;
-  }
-
-  #header .toc-nav-link {
-    width: 41.66667%;
-    float: left;
-    margin-right: 16.66667%;
-    display: inline;
-    float: right;
-    margin-right: 0;
-    #margin-left: -1em;
-    display: inline;
-    font-family: "Arvo", "andale mono", "lucida console", monospace;
-    color: #002b36;
-    font-weight: 700;
-    text-align: right;
-    padding: 14px 0 16px 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    text-decoration: none;
-  }
-
-  #header .toc-nav-link:before {
-    margin-right: 0.5em;
-    font-size: 130%;
-    line-height: 1;
-    vertical-align: bottom;
-  }
-
-  #toc {
-    width: 100%;
-    float: left;
-    margin-right: 1.20482%;
-    display: inline;
-    float: right;
-    margin-right: 0;
-    #margin-left: -1em;
-    display: inline;
-    height: 0;
-    overflow: hidden;
-  }
-
-  #toc:target {
-    padding: 1em 0 5em 0;
-    height: auto;
-  }
-
-  #toc a {
-    font-size: 120%;
-  }
-
-  #main {
-    width: 100%;
-    float: left;
-    margin-right: 1.20482%;
-    display: inline;
-    margin-left: 0;
-    margin-right: 0;
-    float: left;
-    margin-right: 1.20482%;
-    #margin-left: auto;
-    font-size: 120%;
-  }
-
-  #main h1 {
-    font-size: 2em;
-  }
-
-  #main h2 {
-    font-size: 1.5em;
-  }
