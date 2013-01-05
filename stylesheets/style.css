@@ -205,18 +205,6 @@ body {
   margin: 0;
 }
 
-.logo {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-  overflow: hidden;
-  display: block;
-  width: 225px;
-  height: 225px;
-}
-
 .container {
   *zoom: 1;
   max-width: 83em;
@@ -457,106 +445,6 @@ body {
   float: right;
 }
 
-#hero {
-  padding: 50px 0 30px 0;
-  border-bottom: 1px solid #d9ccad;
-  background: #e1d7be;
-  text-align: center;
-}
-
-#hero h1 {
-  width: 225px;
-  margin: 0 auto 0 auto;
-}
-
-#hero h2 {
-  font-size: 36px;
-  font-family: "Questrial", "Helvetica Neue", Arial, Helvetica, sans-serif;
-  text-shadow: 0 0 10px white;
-  margin: 30px 0 30px 0;
-}
-
-#install {
-  text-align: center;
-  margin: -15px 0 40px 0;
-}
-
-#install p {
-  display: inline-block;
-  color: #f1e7d6;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  padding: 15px 25px;
-  background-color: #957642;
-  -webkit-box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.7), 0 1px 4px 0 #655740 inset;
-  -moz-box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.7), 0 1px 4px 0 #655740 inset;
-  box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.7), 0 1px 4px 0 #655740 inset;
-}
-
-#install b {
-  font-size: 24px;
-}
-
-.intro {
-  color: #957642;
-  font-size: 15px;
-  margin: 10px auto;
-  text-align: center;
-}
-
-.sns a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.sns a:hover {
-  text-decoration: underline;
-  color: inherit;
-}
-
-.sns span {
-  margin: 0 10px;
-}
-
-.bgcolor-E1DBC9 {
-  background: #e1dbc9;
-}
-
-.bgcolor-C5BFB0 {
-  background: #c5bfb0;
-}
-
-.bgcolor-3F3724 {
-  background: #3f3724;
-}
-
-.bgcolor-1586BF {
-  background: #1586bf;
-}
-
-.bgcolor-746643 {
-  background: #746643;
-}
-
-.bgcolor-062737 {
-  background: #062737;
-}
-
-.bgcolor-3F5466 {
-  background: #3f5466;
-}
-
-.bgcolor-E1DBC9 {
-  background: #e1dbc9;
-}
-
-.bgcolor-F1BD3D {
-  background: #f1bd3d;
-}
-
 .color-sample {
   float: right;
 }
@@ -569,4 +457,40 @@ body {
 
 .color-sample li {
   padding: 10px;
+}
+
+.color-sample .bgcolor-E1DBC9 {
+  background: #e1dbc9;
+}
+
+.color-sample .bgcolor-C5BFB0 {
+  background: #c5bfb0;
+}
+
+.color-sample .bgcolor-3F3724 {
+  background: #3f3724;
+}
+
+.color-sample .bgcolor-1586BF {
+  background: #1586bf;
+}
+
+.color-sample .bgcolor-746643 {
+  background: #746643;
+}
+
+.color-sample .bgcolor-062737 {
+  background: #062737;
+}
+
+.color-sample .bgcolor-3F5466 {
+  background: #3f5466;
+}
+
+.color-sample .bgcolor-E1DBC9 {
+  background: #e1dbc9;
+}
+
+.color-sample .bgcolor-F1BD3D {
+  background: #f1bd3d;
 }
