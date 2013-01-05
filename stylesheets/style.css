@@ -436,6 +436,10 @@ body {
   float: right;
 }
 
+#support p {
+  text-align: center;
+}
+
 .color-sample {
   float: right;
 }
