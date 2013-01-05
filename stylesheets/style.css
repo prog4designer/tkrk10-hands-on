@@ -1,21 +1,20 @@
-.logo {
-  background-color: #444;
-  color: #fff;
-}
-
-.heading {
+#logo {
   color: #000;
 }
 
-.text {
+h1, h2, h3, h4, h5, h6 {
   color: #000;
 }
 
-.header {
+#text, p, a {
+  color: #000;
+}
+
+#header {
   background-color: #ddd;
 }
 
-.main {
+#contents {
   background-color: #fff;
 }
 
@@ -80,13 +79,9 @@ html {
 body {
   font-size: 87.5%;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-  color: #3f3724;
   line-height: 1.5;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #1586bf;
-}
 
 h1 {
   font-size: 3em;
@@ -130,12 +125,10 @@ p {
 }
 
 a {
-  color: #1586bf;
 }
 
 blockquote {
   margin: 1.5em;
-  color: #666666;
   font-style: italic;
 }
 
@@ -228,19 +221,16 @@ body {
 }
 
 #footer {
-  background-color: #e1dbc9;
   padding: 20px 0;
   margin-top: 30px;
 }
 
 #footer p {
-  color: #3f3724;
   margin: 0;
   font-size: 13px;
 }
 
 #footer a {
-  color: #3f3724;
   text-decoration: none;
 }
 
@@ -272,8 +262,7 @@ body {
 .toc-block ul li {
   font-size: 15px;
   line-height: 1.3;
-  padding: 6px 0 6px 12px;
-  border-left: 2px solid #e1d7be;
+  padding: 6px 0 6px 1em;
 }
 
 .toc-block ul li a {
@@ -334,7 +323,6 @@ body {
 #support .one .bsa_it_ad.bsa_it_d {
   padding: 0;
   font-size: 12px;
-  color: #333333;
 }
 
 #support .one .bsa_it_p {
@@ -356,10 +344,7 @@ body {
 }
 
 #header {
-  background: #e1dbc9;
-  border-bottom: 1px solid #d9ccad;
   margin: 0 0 50px 0;
-  color: #3f3724;
   height: 55px;
 }
 
