@@ -12,7 +12,7 @@
   <body id="contents">
   <header id="header">
     <div class="container">
-      <h1 id="logo">My Gem</h1>
+		<h1 id="logo">My Gem <span class="announce">Click here or Keydown "p" to toggle color picker.</span></h1>
       <a class="toc-nav-link icon-arrow-down" href="index.html#toc">Menu</a>
     </div>
   </header>
@@ -84,7 +84,13 @@
     </article>
 
     <div id="support">
-      <p><input type="button" id="palette-button" value="パレット" /></p>
+	  <ul class="pickto">
+		<li data-target="#logo" data-type="color">ロゴの色</li>
+		<li data-target="h1_h2_h3_h4_h5_h6" data-type="color">見出し色</li>
+		<li data-target="#text_p_a" data-type="color">本文の文字色</li>
+		<li data-target="#header" data-type="backgroundColor">ヘッダー色</li>
+		<li data-target="#contents" data-type="backgroundColor">サイト全体の背景色</li>
+	  </ul>
       <ul class="color-sample">
         <li class="bgcolor-E1DBC9">#E1DBC9</li>
         <li class="bgcolor-C5BFB0">#C5BFB0</li>
