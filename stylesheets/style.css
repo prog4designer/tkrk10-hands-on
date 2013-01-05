@@ -369,7 +369,7 @@ body {
   float: left;
   margin-right: 1.20482%;
   display: inline;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 #toc div:first-child h3 {
@@ -393,6 +393,10 @@ body {
 #logo {
   line-height: 1;
   font-weight: 700;
+}
+
+#logo {
+  line-height: 49px;
 }
 
 #main h2, #main h3 {
