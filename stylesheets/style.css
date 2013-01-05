@@ -389,9 +389,14 @@ body {
   text-align: center;
 }
 
+#support li{
+	cursor: pointer;
+}
+
 #support ul.pickto{
 	color: #888;
 	list-style: none;
+	overflow:hidden;
 }
 
 #support ul.pickto li{

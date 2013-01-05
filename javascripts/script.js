@@ -28,7 +28,11 @@ $(function(){
 
 	var len = targets.length;
 	for(var i = 0; i < len; i++){
-	  $(targets[i]).css(type, color);
+	  if(targets[i] === "h1"){
+		$(targets[i]).not("#logo").css(type, color);
+	  }else{
+		$(targets[i]).css(type, color);
+	  }
 	}
   });
 
