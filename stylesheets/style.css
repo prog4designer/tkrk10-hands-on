@@ -372,24 +372,10 @@ body {
   border-bottom: 1px solid #d9ccad;
   margin: 0 0 50px 0;
   color: #3f3724;
+  height: 55px;
 }
 
 #header h1 {
-  position: absolute;
-  left: 0;
-  bottom: -35px;
-}
-
-#header p {
-  width: 70.48193%;
-  float: left;
-  margin-right: 1.20482%;
-  display: inline;
-  margin-left: 25.3012%;
-  font-family: "Arvo", "andale mono", "lucida console", monospace;
-  margin-top: 14px;
-  margin-bottom: 14px;
-  font-size: 18px;
 }
 
 #header .container {
@@ -584,4 +570,3 @@ body {
 .color-sample li {
   padding: 10px;
 }
-
