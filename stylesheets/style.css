@@ -1,19 +1,24 @@
+/* 1. ロゴの色 */
 #logo {
   color: #000;
 }
 
+/* 2. 見出し色 */
 h1, h2, h3, h4, h5, h6 {
   color: #000;
 }
 
+/* 3. 本文の文字色 */
 #text, p, a {
   color: #000;
 }
 
+/* 4. ヘッダー色 */
 #header {
   background-color: #ddd;
 }
 
+/* 5. サイト全体の背景色 */
 #contents {
   background-color: #fff;
 }
