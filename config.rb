@@ -17,3 +17,4 @@ javascripts_dir = "javascripts"
 # line_comments = false
 
 preferred_syntax = :sass
+output_style = :compact
