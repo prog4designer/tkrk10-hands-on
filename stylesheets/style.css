@@ -389,7 +389,8 @@ body {
   margin-right: 4.21687%;
 }
 
-#main h1:first-child {
+#main h1:first-child,
+#logo {
   line-height: 1;
   font-weight: 700;
 }
