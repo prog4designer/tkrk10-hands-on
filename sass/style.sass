@@ -1,0 +1,611 @@
+@import "compass/css3/"
+
+$main-color: #1586BF
+$body-color: #C5BFB0
+$text-color: #3F3724
+$header-color: #E1DBC9
+
+.bgcolor-E1DBC9 
+  background: #E1DBC9 
+.bgcolor-C5BFB0 
+  background: #C5BFB0 
+.bgcolor-3F3724 
+  background: #3F3724
+.bgcolor-1586BF 
+  background: #1586BF 
+.bgcolor-746643 
+  background: #746643 
+.bgcolor-062737 
+  background: #062737 
+.bgcolor-3F5466 
+  background: #3F5466
+.bgcolor-E1DBC9 
+  background: #E1DBC9 
+.bgcolor-F1BD3D 
+  background: #F1BD3D 
+
+.color-sample
+  float: right
+  ul, li
+    list-style: none
+    color: #FFF
+    padding: 0
+  li
+    padding: 10px
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  font: inherit
+  font-size: 100%
+  vertical-align: baseline
+
+html
+  line-height: 1
+
+ol, ul
+  list-style: none
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+caption, th, td
+  text-align: left
+  font-weight: 400
+  vertical-align: middle
+
+q, blockquote
+  quotes: none
+
+q
+  &:before, &:after
+    content: ""
+    content: none
+
+blockquote
+  &:before, &:after
+    content: ""
+    content: none
+
+a img
+  border: none
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary
+  display: block
+
+html
+  font-size: 100.01%
+
+body
+  font-size: 87.5%
+  font-family: "Helvetica Neue",Arial,Helvetica,sans-serif
+  color: $text-color
+  line-height: 1.5
+
+h1, h2, h3, h4, h5, h6
+  color: $main-color
+
+h1
+  font-size: 3em
+  line-height: 1.1
+  margin-bottom: .5em
+
+h2
+  font-size: 2em
+  line-height: 1.2
+  margin-bottom: .75em
+
+h3
+  font-size: 1.5em
+  line-height: 1.25
+  margin-bottom: 1em
+
+h4
+  font-size: 1.2em
+  line-height: 1.3
+  margin-bottom: 1.25em
+
+h5
+  font-size: 1em
+  margin-bottom: 1.5em
+
+h6
+  font-size: 1em
+
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img
+  margin: 0
+
+p
+  margin: 0 0 1.5em
+
+a
+  color: $main-color
+
+blockquote
+  margin: 1.5em
+  color: #666
+  font-style: italic
+
+strong, dfn
+  font-weight: 700
+
+em, dfn
+  font-style: italic
+
+sup, sub
+  line-height: 0
+
+abbr, acronym
+  border-bottom: 1px dotted#666
+
+address
+  margin: 0 0 1.5em
+  font-style: italic
+
+pre
+  margin: 1.5em 0
+  white-space: pre
+  font-size: 1em
+  font-family: "andale mono","lucida console",monospace
+  line-height: 1.5
+
+code, tt
+  font-size: 1em
+  font-family: "andale mono","lucida console",monospace
+  line-height: 1.5
+
+ul, ol
+  margin: 0 1.5em 1.5em 0
+  padding-left: 1.5em
+
+ul
+  list-style-type: disc
+
+ol
+  list-style-type: decimal
+
+dl
+  margin: 0 0 1.5em 0
+  dt
+    font-weight: 700
+  dd
+    margin-left: 1.5em
+
+@font-face
+  font-family: "FontAwesome"
+  src: url(http://middlemanapp.com/stylesheets/font/fontawesome-webfont.eot)
+  src: url(http://middlemanapp.com/stylesheets/font/fontawesome-webfont.eot?) format("eot"), url(http://middlemanapp.com/stylesheets/font/fontawesome-webfont.woff) format("woff"), url(http://middlemanapp.com/stylesheets/font/fontawesome-webfont.ttf) format("truetype"), url(http://middlemanapp.com/stylesheets/font/fontawesome-webfont.svg) format("svg")
+  font-weight: 400
+  font-style: normal
+
+
+[class^="icon-"]:before, [class*=" icon-"]:before
+  font-family: FontAwesome
+  font-weight: 400
+  font-style: normal
+  display: inline-block
+  text-decoration: inherit
+
+a
+  [class^="icon-"], [class*=" icon-"]
+    display: inline-block
+    text-decoration: inherit
+
+.icon-large:before
+  vertical-align: middle
+  font-size: 4 / 3em
+
+.btn
+  [class^="icon-"], [class*=" icon-"]
+    line-height: .9em
+
+.nav-tabs
+  [class^="icon-"], [class*=" icon-"]
+    line-height: .9em
+
+li
+  [class^="icon-"], [class*=" icon-"]
+    display: inline-block
+    width: 1.25em
+    text-align: center
+  .icon-large:before
+    width: 1.875em
+
+ul.icons
+  list-style-type: none
+  margin-left: 2em
+  text-indent: -0.8em
+  li
+    [class^="icon-"], [class*=" icon-"]
+      width: .8em
+    .icon-large:before
+      vertical-align: initial
+
+body
+  text-rendering: optimizeLegibility
+  background: $body-color 
+  margin: 0
+
+.logo
+  -webkit-border-radius: 4px
+  -moz-border-radius: 4px
+  -ms-border-radius: 4px
+  -o-border-radius: 4px
+  border-radius: 4px
+  overflow: hidden
+  display: block
+  width: 225px
+  height: 225px
+
+.container
+  *zoom: 1
+  max-width: 83em
+  _width: 83em
+  padding-left: 1em
+  padding-right: 1em
+  margin-left: auto
+  margin-right: auto
+  *zoom: 1
+  position: relative
+  overflow: visible
+  &:after
+    content: ""
+    display: table
+    clear: both
+    content: ""
+    display: table
+    clear: both
+
+.console
+  font-family: "Arvo","andale mono","lucida console",monospace
+  font-weight: 400
+  line-height: 1.2
+  word-spacing: .3em
+
+#footer
+  background-color: $header-color
+  padding: 20px 0
+  margin-top: 30px
+  p
+    color: $text-color
+    margin: 0
+    font-size: 13px
+  a
+    color: $text-color
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+  .copyright
+    display: inline
+    float: left
+  .link
+    display: inline
+    float: right
+
+.toc-block
+  h3
+    margin: 1.5em 0 .3em 0
+    font-weight: 700
+  ul
+    list-style-type: none
+    margin: 0
+    padding: 0
+    li
+      font-size: 15px
+      line-height: 1.3
+      padding: 6px 0 6px 12px
+      border-left: 2px solid #e1d7be
+      a
+        text-decoration: none
+        display: block
+  p
+    margin: 0 0 .5em 0
+
+#support
+  width: 15.66265%
+  float: left
+  display: inline
+  float: right
+  margin-right: 0
+  display: inline
+  margin-top: 2em
+  .donate
+    padding: 1em
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+  .one
+    .bsa_it_ad
+      background: transparent
+      border: none
+      font-family: inherit
+      padding: 1em
+      margin: 0
+      -o-transition: all .3s linear
+      -moz-transition: all .3s linear
+      -webkit-transition: all .3s linear
+      transition: all .3s linear
+      &:hover
+        background: #efe8d5
+      &.bsa_it_i
+        display: block
+        padding: 0
+        float: none
+        margin: 0 0 5px 0
+        img
+          max-width: 100%
+          padding: 0
+          border: none
+      &.bsa_it_d
+        padding: 0
+        font-size: 12px
+        color: #333
+    .bsa_it_p
+      display: none
+  #bsap_aplink
+    display: block
+    font-size: 10px
+    margin: 12px 15px 0
+    text-align: right
+    &:hover
+      display: block
+      font-size: 10px
+      margin: 12px 15px 0
+      text-align: right
+
+#header
+  background: $header-color
+  border-bottom: 1px solid #d9ccad
+  margin: 0 0 50px 0
+  color: $text-color
+  h1
+    position: absolute
+    left: 0
+    bottom: -35px
+  p
+    width: 70.48193%
+    float: left
+    margin-right: 1.20482%
+    display: inline
+    margin-left: 25.3012%
+    font-family: "Arvo","andale mono","lucida console",monospace
+    margin-top: 14px
+    margin-bottom: 14px
+    font-size: 18px
+  .container
+    overflow: visible
+  .toc-nav-link
+    display: none
+
+#toc
+  width: 19.87952%
+  float: left
+  margin-right: 1.20482%
+  display: inline
+  margin-top: 15px
+  div:first-child h3
+    margin-top: 0
+  footer
+    margin: 20px 0
+
+#main
+  width: 53.61446%
+  float: left
+  margin-right: 1.20482%
+  display: inline
+  margin-left: 4.21687%
+  margin-right: 4.21687%
+  h1:first-child
+    line-height: 1
+    font-weight: 700
+  h2, h3
+    margin-top: 2em
+  pre
+    background: #F8F8F8
+    -webkit-box-shadow: 0 1px 1px #a89a7a inset,0 1px 0 white
+    -moz-box-shadow: 0 1px 1px #a89a7a inset,0 1px 0 white
+    box-shadow: 0 1px 1px #a89a7a inset,0 1px 0 white
+    padding: .5em 1em
+    margin: 1.5em 0
+    overflow: auto
+    -webkit-border-radius: 4px
+    -moz-border-radius: 4px
+    -ms-border-radius: 4px
+    -o-border-radius: 4px
+    border-radius: 4px
+  footer
+    border-top: 1px solid #c6bda8
+    background: #c6bda8
+    padding: 1em 10px
+    overflow: hidden
+    *zoom: 1
+    p
+      margin: 0
+      &.left
+        display: inline
+        float: left
+      &.right
+        display: inline
+        float: right
+
+#hero
+  padding: 50px 0 30px 0
+  border-bottom: 1px solid #d9ccad
+  background: #e1d7be
+  text-align: center
+  h1
+    width: 225px
+    margin: 0 auto 0 auto
+  h2
+    font-size: 36px
+    font-family: "Questrial","Helvetica Neue",Arial,Helvetica,sans-serif
+    text-shadow: 0 0 10px white
+    margin: 30px 0 30px 0
+
+#install
+  text-align: center
+  margin: -15px 0 40px 0
+  p
+    display: inline-block
+    color: #F1E7D6
+    -webkit-border-radius: 5px
+    -moz-border-radius: 5px
+    -ms-border-radius: 5px
+    -o-border-radius: 5px
+    border-radius: 5px
+    padding: 15px 25px
+    background-color: #957642
+    -webkit-box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.7), 0 1px 4px 0 #655740 inset
+    -moz-box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.7), 0 1px 4px 0 #655740 inset
+    box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.7), 0 1px 4px 0 #655740 inset
+  b
+    font-size: 24px
+
+.intro
+  color: #957642
+  font-size: 15px
+  margin: 10px auto
+  text-align: center
+
+.sns
+  a
+    color: inherit
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+      color: inherit
+  span
+    margin: 0 10px
+
+.grid
+  width: 83.13253%
+  float: left
+  margin-right: 1.20482%
+  display: inline
+  *zoom: 1
+  &:after
+    content: ""
+    display: table
+    clear: both
+  .toc-block
+    width: 31.70732%
+    float: left
+    margin-right: 2.43902%
+    display: inline
+    padding: 1em 0
+    &:nth-child(3n)
+      float: right
+      margin-right: 0
+    &:nth-child(3n+1)
+      clear: left
+
+pre
+  .comment, .template_comment, .diff .header, .doctype, .lisp .string, .javadoc
+    color: #93a1a1
+    font-style: italic
+  .keyword, .css .rule .keyword, .winutils, .javascript .title, .method, .addition, .css .tag, .lisp .title
+    color: #859900
+  .number, .command, .string, .tag .value, .phpdoc, .tex .formula, .regexp, .hexcolor
+    color: #2aa198
+  .title, .localvars, .function .title, .chunk, .decorator, .builtin, .built_in, .lisp .title, .identifier, .title .keymethods, .id
+    color: #268bd2
+  .attribute, .variable, .instancevar, .lisp .body, .smalltalk .number, .constant, .class .title, .parent, .haskell .label
+    color: #b58900
+  .preprocessor, .pi, .shebang, .symbol, .diff .change, .special, .keymethods, .attr_selector, .important, .subst, .cdata
+    color: #cb4b16
+  .deletion
+    color: #dc322f
+  .tex .formula
+    background: #eee8d5
+
+@media screen and (max-width: 660px)
+  #support
+    .donate, .one
+      float: none
+      width: auto
+      margin-right: auto
+      #margin-left: auto
+      display: block
+  #footer .link
+    display: inline
+    float: left
+
+@media screen and (max-width: 660px)
+  #header
+    h1
+      bottom: -22px
+      width: 180px
+      left: 0
+      .logo
+        width: 100%
+        text-align: center
+        background: #002b36
+        -webkit-border-radius: 0
+        -moz-border-radius: 0
+        -ms-border-radius: 0
+        -o-border-radius: 0
+        border-radius: 0
+        img
+          width: 180px
+          height: 180px
+          position: absolute
+          bottom: 0
+          left: 0
+    p
+      display: none
+    .toc-nav-link
+      width: 41.66667%
+      float: left
+      margin-right: 16.66667%
+      display: inline
+      float: right
+      margin-right: 0
+      #margin-left: -1em
+      display: inline
+      font-family: "Arvo","andale mono","lucida console",monospace
+      color: #002b36
+      font-weight: 700
+      text-align: right
+      padding: 14px 0 16px 0
+      -webkit-box-sizing: border-box
+      -moz-box-sizing: border-box
+      box-sizing: border-box
+      text-decoration: none
+      &:before
+        margin-right: .5em
+        font-size: 130%
+        line-height: 1
+        vertical-align: bottom
+  #toc
+    width: 100%
+    float: left
+    margin-right: 1.20482%
+    display: inline
+    float: right
+    margin-right: 0
+    #margin-left: -1em
+    display: inline
+    height: 0
+    overflow: hidden
+    &:target
+      padding: 1em 0 5em 0
+      height: auto
+    a
+      font-size: 120%
+  #main
+    width: 100%
+    float: left
+    margin-right: 1.20482%
+    display: inline
+    margin-left: 0
+    margin-right: 0
+    float: left
+    margin-right: 1.20482%
+    #margin-left: auto
+    font-size: 120%
+    h1
+      font-size: 2em
+    h2
+      font-size: 1.5em

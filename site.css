@@ -134,8 +134,7 @@ ul.icons li .icon-large:before,ul.icons li .icon-large:before{
 vertical-align:initial}
 body{
 text-rendering:optimizeLegibility;
-background:#efe8d5 url('data:image/png;
-base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQAgMAAADzfxo+AAAADFBMVEXx6tfv6NXs5dLg3czcnqHfAAAARUlEQVR4Xu2RsQkAIAwEE3UAR3KJOKRLuJeVCOZbBSvhrwjPw3NFxJxqQKTkpOsEJH0sPxZRRFE8lc3pA/Fuzh9tKKJoAr91xp3fgwThAAAAAElFTkSuQmCC');
+background:#efe8d5;
 margin:0}
 
 .logo{
