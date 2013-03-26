@@ -1,9 +1,27 @@
 $(function(){
 
-  console.log("jQuery Version: " + $().jquery);
+
+  // ***************
+  // init
+  // ***************
+
+  var extendColors = new ExtendColors();
+  extendColors.render();
+
+  var selectedTarget = $("#support").find(".pickto").find("li").first();
+  selectedTarget.addClass("selected");
+
+  var support = $("#support");
+  support.prependTo("body");
+  console.log(support);
+
+  support.delay(500).slideDown();
 
 
+  // ***************
   // events
+  // ***************
+
   $(document).on("keydown", pickertoggle);
 
   $("header").on("click", pickertoggle);
@@ -32,18 +50,10 @@ $(function(){
   });
 
 
-  // init
-  var selectedTarget = $("#support").find(".pickto").find("li").first();
-  selectedTarget.addClass("selected");
+  // ***************
+  // functions
+  // ***************
 
-  var support = $("#support");
-  support.prependTo("body");
-  console.log(support);
-
-  support.delay(500).slideDown();
-
-
-  // 必要な機能
   function ExtendColors(){
     var self = this;
     var renderTarget = '#support';
@@ -100,13 +110,6 @@ $(function(){
     };
   }
 
-  var extendColors = new ExtendColors();
-  extendColors.render();
-
-
-  // ***************
-  // functions
-  // ***************
 
   // #support toggle
   function pickertoggle(e){
@@ -114,6 +117,7 @@ $(function(){
       $("#support").slideToggle();
     }
   }
+
 
   // getArgs
   function getArgs() {
@@ -130,6 +134,7 @@ $(function(){
     }
     return args;
   }
+
 
   // 最適化されたcolor codeを返す
   function adjustColorCode( code ){
