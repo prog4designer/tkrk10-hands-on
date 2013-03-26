@@ -2,9 +2,9 @@ $(function(){
   console.log("jQuery Version: " + $().jquery);
 
   function pickertoggle(e){
-	if(e.type === "click" || e.keyCode == 80){
-	  $("#support").slideToggle();
-	}
+    if(e.type === "click" || e.keyCode == 80){
+      $("#support").slideToggle();
+    }
   }
 
   $(document).on("keydown", pickertoggle);
@@ -14,26 +14,26 @@ $(function(){
   selectedTarget.addClass("selected");
 
   $("#support").find(".pickto").find("li").on("click", function(){
-	var t = $(this);
-	t.parent().find("li").removeClass("selected");
-	t.addClass("selected");
-	selectedTarget=t;
+    var t = $(this);
+    t.parent().find("li").removeClass("selected");
+    t.addClass("selected");
+    selectedTarget=t;
   });
 
   $("#support").find(".color-sample").find("li").on("click", function(){
-	var t = $(this);
-	var targets = selectedTarget.data("target").split("_");
-	var type = selectedTarget.data("type");
-	var color = t.text();
+    var t = $(this);
+    var targets = selectedTarget.data("target").split("_");
+    var type = selectedTarget.data("type");
+    var color = t.text();
 
-	var len = targets.length;
-	for(var i = 0; i < len; i++){
-	  if(targets[i] === "h1"){
-		$(targets[i]).not("#logo").css(type, color);
-	  }else{
-		$(targets[i]).css(type, color);
-	  }
-	}
+    var len = targets.length;
+    for(var i = 0; i < len; i++){
+      if(targets[i] === "h1"){
+        $(targets[i]).not("#logo").css(type, color);
+      }else{
+        $(targets[i]).css(type, color);
+      }
+    }
   });
 
   var support = $("#support");
