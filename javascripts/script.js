@@ -11,10 +11,11 @@ $(function(){
   // h = heading color / 現在のh1...h6の色。状態保存用。複数不可。
   // hd = header bg color / 現在のヘッダーの背景色。状態保存用。複数不可。
   // ct = contents bg color / 現在のサイトの背景色。状態保存用。複数不可。
-  var HASHES_NAME = {
+  var HASH_KEY = {
     EXTEND: 'ec',
     LOGO: 'lg',
     HEADING: 'h',
+    TEXT: 'tx',
     HEADER: 'hd',
     CONTENTS: 'ct'
   };
@@ -24,6 +25,7 @@ $(function(){
   // init
   // ***************
 
+  var urlCnt = new UrlController();
   var extendColors = new ExtendColors();
   extendColors.render();
 
@@ -66,6 +68,10 @@ $(function(){
         $(targets[i]).css(type, color);
       }
     }
+
+    // とりあえず実装
+    var _key = selectedTarget.data('key');
+    urlCnt.setHashes( _key, color.substring(1) );
   });
 
 
@@ -73,6 +79,66 @@ $(function(){
   // functions
   // ***************
 
+  // url controller
+  function UrlController(){
+    var self = this;
+
+    // getArgs
+    this.getArgs = function() {
+      var args = new Object();
+      var query = location.search.substring(1);
+      var pairs = query.split('&');
+      for( var i = 0; i < pairs.length; i++ ) {
+        var pos = pairs[i].indexOf('=');
+        if( pos == -1 ) continue;
+        var argname = pairs[i].substring( 0, pos );
+        var value= pairs[i].substring( pos + 1 );
+        value = decodeURIComponent( value );
+        args[ argname ] = value;
+      }
+      return args;
+    };
+
+    // getHashes
+    this.getHashes = function( hashesName ) {
+      var args = new Object();
+      var hash = location.hash.substring(1);
+      var pairs = hash.split('&');
+      for( var i = 0; i < pairs.length; i++ ) {
+        var pos = pairs[i].indexOf('=');
+        if( pos == -1 ) continue;
+        var argname = pairs[i].substring( 0, pos );
+        var value= pairs[i].substring( pos + 1 );
+        value = decodeURIComponent( value );
+        args[ argname ] = value;
+      }
+      if( typeof hashesName == 'string' ){
+        args = args[ hashesName ];
+      }
+      return args;
+    };
+
+    // set hashes
+    this.setHashes = function( hashKey, color ){
+      var hashes = self.getHashes();
+      hashes[ hashKey ] = color;
+
+      var ary = [];
+      $.each( hashes, function( key, val ){
+        var key = key.toLowerCase();
+        var val = val.toLowerCase();
+        var str = key + '=' + val;
+        ary.push( str );
+      });
+
+      ary = ary.join( '&' );
+
+      location.hash = ary;
+    };
+  }
+
+
+  // extend colors
   function ExtendColors(){
     var self = this;
     var renderTarget = '#support';
@@ -102,9 +168,8 @@ $(function(){
         colors = _defaultColors;
       } else {
         // get URL hashes
-        var hashes = getHashes();
-        var extendColors = HASHES_NAME.EXTEND;
-        colors = hashes[ extendColors ].split(',');
+        var hashes = urlCnt.getHashes( HASH_KEY.EXTEND );
+        colors = hashes.split(',');
       }
       return colors;
     };
@@ -123,11 +188,38 @@ $(function(){
       return $lists;
     };
 
+    // set hash key
+    this._setHashKey = function(){
+      // とりあえず実装
+      var $lists = $('#support').find('.pickto li').each(function(){
+        var target = $(this).data('target');
+
+        if( target == '#logo' ){
+          $(this).attr('data-key', HASH_KEY.LOGO);
+
+        } else if ( target == 'h1_h2_h3_h4_h5_h6' ){
+          $(this).attr('data-key', HASH_KEY.HEADING);
+
+        } else if ( target == '#text_p_a' ){
+          $(this).attr('data-key', HASH_KEY.TEXT);
+
+        } else if ( target == '#header' ){
+          $(this).attr('data-key', HASH_KEY.HEADER);
+
+        } else if ( target == '#contents' ){
+          $(this).attr('data-key', HASH_KEY.CONTENTS);
+        }
+      });
+    };
+
     // render color list
     this.render = function(){
-      var $target = $( renderTarget );
       var $lists = self._create( self._get() );
+
+      var $target = $( renderTarget );
       $target.append( $lists );
+
+      self._setHashKey();
     };
   }
 
@@ -137,41 +229,6 @@ $(function(){
     if(e.type === "click" || e.keyCode == 80){
       $("#support").slideToggle();
     }
-  }
-
-
-  // getArgs
-  function getArgs() {
-    var args = new Object();
-    var query = location.search.substring(1);
-    var pairs = query.split('&');
-    for( var i = 0; i < pairs.length; i++ ) {
-      var pos = pairs[i].indexOf('=');
-      if( pos == -1 ) continue;
-      var argname = pairs[i].substring( 0, pos );
-      var value= pairs[i].substring( pos + 1 );
-      value = decodeURIComponent( value );
-      args[ argname ] = value;
-    }
-    return args;
-  }
-
-
-  // getHashes
-  function getHashes() {
-    var args = new Object();
-    var hash = location.hash.substring(1);
-    var pairs = hash.split('&');
-    for( var i = 0; i < pairs.length; i++ ) {
-      var pos = pairs[i].indexOf('=');
-      if( pos == -1 ) continue;
-      var argname = pairs[i].substring( 0, pos );
-      var value= pairs[i].substring( pos + 1 );
-      value = decodeURIComponent( value );
-      args[ argname ] = value;
-    }
-    console.log( args );
-    return args;
   }
 
 
