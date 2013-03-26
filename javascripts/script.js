@@ -1,17 +1,19 @@
 $(function(){
+
   console.log("jQuery Version: " + $().jquery);
 
+  // #support toggle
   function pickertoggle(e){
     if(e.type === "click" || e.keyCode == 80){
       $("#support").slideToggle();
     }
   }
 
-  $(document).on("keydown", pickertoggle);
-  $("header").on("click", pickertoggle);
 
-  var selectedTarget = $("#support").find(".pickto").find("li").first();
-  selectedTarget.addClass("selected");
+  // events
+  $(document).on("keydown", pickertoggle);
+
+  $("header").on("click", pickertoggle);
 
   $("#support").find(".pickto").find("li").on("click", function(){
     var t = $(this);
@@ -35,6 +37,11 @@ $(function(){
       }
     }
   });
+
+
+  // init
+  var selectedTarget = $("#support").find(".pickto").find("li").first();
+  selectedTarget.addClass("selected");
 
   var support = $("#support");
   support.prependTo("body");
