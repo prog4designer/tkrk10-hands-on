@@ -131,9 +131,7 @@ $(function(){
         ary.push( str );
       });
 
-      ary = ary.join( '&' );
-
-      location.hash = ary;
+      location.hash = ary.join( '&' );
     };
 
     // set events
