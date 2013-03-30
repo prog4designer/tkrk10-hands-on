@@ -191,6 +191,7 @@ $(function(){
         // get URL hashes
         var key = HASH_KEY.EXTEND;
         var hashes = urlCnt.getHashes( key );
+        hashes = hashes + ',fff,000';
         colors = hashes.split(',');
       }
       return colors;
