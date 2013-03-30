@@ -28,6 +28,7 @@ $(function(){
   var urlCnt = new UrlController();
 
   extendColors.render( HASH_KEY );
+  extendColors.setEvents( HASH_KEY );
   urlCnt.setEvents();
 
 
@@ -243,8 +244,15 @@ $(function(){
     this._setUserColors = function( HASH_KEY ){
       // とりあえず実装
       var PT = PAINT_TARGETS;
-
       var hashes = urlCnt.getHashes();
+
+      $.each( PT, function( key, val ){
+        var tar = val.split( '_' );
+        $.each( tar, function( i ){
+          $( tar[ i ] ).attr( 'style', '' );
+        });
+      });
+
       $.each( hashes, function( key, val ){
         var tar = [];
         var v = adjustColorCode( val );
@@ -285,6 +293,13 @@ $(function(){
 
       // render current user colors
       self._setUserColors( HASH_KEY );
+    };
+
+    // set events
+    this.setEvents = function( HASH_KEY ){
+      $el = $(window).on( 'popstate', function( e ){
+        self._setUserColors( HASH_KEY );
+      });
     };
   }
 
