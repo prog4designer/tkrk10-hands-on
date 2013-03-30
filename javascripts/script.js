@@ -112,7 +112,7 @@ $(function(){
         value = decodeURIComponent( value );
         args[ argname ] = value;
       }
-      if( typeof hashesName == 'string' ){
+      if( hashesName != undefined ){
         args = args[ hashesName ];
       }
       return args;
