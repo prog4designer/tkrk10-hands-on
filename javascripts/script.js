@@ -170,7 +170,9 @@ $(function(){
       'B68299',
       '982365',
       'E0EC8F',
-      '61B816'
+      '61B816',
+      'fff',
+      '000'
     ];
 
     // user color paint targets
@@ -191,8 +193,12 @@ $(function(){
         // get URL hashes
         var key = HASH_KEY.EXTEND;
         var hashes = urlCnt.getHashes( key );
-        hashes = hashes + ',fff,000';
-        colors = hashes.split(',');
+        if( hashes == undefined ){
+          colors = _defaultColors;
+        } else {
+          hashes = hashes + ',fff,000';
+          colors = hashes.split(',');
+        }
       }
       return colors;
     };
