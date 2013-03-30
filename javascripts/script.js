@@ -24,10 +24,13 @@ $(function(){
   // ***************
   // init
   // ***************
-
-  var urlCnt = new UrlController();
   var extendColors = new ExtendColors();
+  var urlCnt = new UrlController();
+
   extendColors.render();
+  urlCnt.setEvents();
+
+
 
   var selectedTarget = $("#support").find(".pickto").find("li").first();
   selectedTarget.addClass("selected");
@@ -43,6 +46,7 @@ $(function(){
   // events
   // ***************
 
+  // eventは機能ごとで発行すること
   $(document).on("keydown", pickertoggle);
 
   $("header").on("click", pickertoggle);
@@ -68,10 +72,6 @@ $(function(){
         $(targets[i]).css(type, color);
       }
     }
-
-    // とりあえず実装
-    var _key = selectedTarget.data('key');
-    urlCnt.setHashes( _key, color.substring(1) );
   });
 
 
@@ -134,6 +134,18 @@ $(function(){
       ary = ary.join( '&' );
 
       location.hash = ary;
+    };
+
+    // set events
+    this.setEvents = function(){
+      // とりあえず実装
+      $el = $("#support").find(".color-sample").find("li");
+      $el.on("click", function(){
+        var t = $(this);
+        var color = t.text();
+        var _key = selectedTarget.data('key');
+        self.setHashes( _key, color.substring(1) );
+      });
     };
   }
 
