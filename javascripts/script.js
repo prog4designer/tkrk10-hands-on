@@ -40,7 +40,7 @@ $(function(){
   support.prependTo("body");
   console.log(support);
 
-  support.delay(500).slideDown();
+  support.delay(500).slideUp( 250, 'swing' );
 
 
   // ***************
@@ -307,7 +307,7 @@ $(function(){
   // #support toggle
   function pickertoggle(e){
     if(e.type === "click" || e.keyCode == 80){
-      $("#support").slideToggle();
+      $("#support").slideToggle( 250, 'swing' );
     }
   }
 
