@@ -173,6 +173,15 @@ $(function(){
       '61B816'
     ];
 
+    // user color paint targets
+    var PAINT_TARGETS = {
+      LOGO: '#logo',
+      HEADING: 'h1_h2_h3_h4_h5_h6',
+      TEXT: '#text_p_a',
+      HEADER: '#header',
+      CONTENTS: '#contents'
+    };
+
     // get extend colors
     this._getExtendColors = function( HASH_KEY ){
       var colors = null;
@@ -225,13 +234,52 @@ $(function(){
       });
     };
 
-    // render color list
+    // set user colors
+    this._setUserColors = function( HASH_KEY ){
+      // とりあえず実装
+      var PT = PAINT_TARGETS;
+
+      var hashes = urlCnt.getHashes();
+      $.each( hashes, function( key, val ){
+        var tar = [];
+        var v = adjustColorCode( val );
+
+        if( key == HASH_KEY.LOGO ){
+          $( PT.LOGO ).css( 'color', v );
+
+        } else if ( key == HASH_KEY.HEADING ){
+          tar = PT.HEADING.split( '_' );
+          $.each( tar, function( i ){
+            $( tar[ i ] ).css( 'color', v );
+          });
+
+        } else if ( key == HASH_KEY.TEXT ){
+          tar = PT.TEXT.split( '_' );
+          $.each( tar, function( i ){
+            $( tar[ i ] ).css( 'color', v );
+          });
+
+        } else if ( key == HASH_KEY.HEADER ){
+          $( PT.HEADER ).css( 'background-color', v );
+
+        } else if ( key == HASH_KEY.CONTENTS ){
+          $( PT.CONTENTS ).css( 'background-color', v );
+        }
+      });
+    };
+
+    // render
     this.render = function( HASH_KEY ){
+      // render color list
       var exColors = self._getExtendColors( HASH_KEY );
       var $lists = self._createColorList( exColors );
       $( renderTarget ).append( $lists );
 
+      // render data-key
       self._setHashKey( HASH_KEY );
+
+      // render current user colors
+      self._setUserColors( HASH_KEY );
     };
   }
 
