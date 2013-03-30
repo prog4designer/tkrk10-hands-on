@@ -27,7 +27,7 @@ $(function(){
   var extendColors = new ExtendColors();
   var urlCnt = new UrlController();
 
-  extendColors.render();
+  extendColors.render( HASH_KEY );
   urlCnt.setEvents();
 
 
@@ -174,13 +174,14 @@ $(function(){
     ];
 
     // get extend colors
-    this._get = function(){
+    this._get = function( HASH_KEY ){
       var colors = null;
       if( location.hash == '' ){
         colors = _defaultColors;
       } else {
         // get URL hashes
-        var hashes = urlCnt.getHashes( HASH_KEY.EXTEND );
+        var key = HASH_KEY.EXTEND;
+        var hashes = urlCnt.getHashes( key );
         colors = hashes.split(',');
       }
       return colors;
@@ -201,7 +202,7 @@ $(function(){
     };
 
     // set hash key
-    this._setHashKey = function(){
+    this._setHashKey = function( HASH_KEY ){
       // とりあえず実装
       var $lists = $('#support').find('.pickto li').each(function(){
         var target = $(this).data('target');
@@ -225,13 +226,13 @@ $(function(){
     };
 
     // render color list
-    this.render = function(){
-      var $lists = self._create( self._get() );
+    this.render = function( HASH_KEY ){
+      var $lists = self._create( self._get( HASH_KEY ) );
 
       var $target = $( renderTarget );
       $target.append( $lists );
 
-      self._setHashKey();
+      self._setHashKey( HASH_KEY );
     };
   }
 
