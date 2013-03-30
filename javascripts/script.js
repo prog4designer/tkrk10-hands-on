@@ -174,7 +174,7 @@ $(function(){
     ];
 
     // get extend colors
-    this._get = function( HASH_KEY ){
+    this._getExtendColors = function( HASH_KEY ){
       var colors = null;
       if( location.hash == '' ){
         colors = _defaultColors;
@@ -188,7 +188,7 @@ $(function(){
     };
 
     // create color list
-    this._create = function( ary ){
+    this._createColorList = function( ary ){
       var colors = ary;
       var $lists = $('<ul/>').addClass( listsClass );
       $.each( colors, function( i ){
@@ -227,10 +227,9 @@ $(function(){
 
     // render color list
     this.render = function( HASH_KEY ){
-      var $lists = self._create( self._get( HASH_KEY ) );
-
-      var $target = $( renderTarget );
-      $target.append( $lists );
+      var exColors = self._getExtendColors( HASH_KEY );
+      var $lists = self._createColorList( exColors );
+      $( renderTarget ).append( $lists );
 
       self._setHashKey( HASH_KEY );
     };
