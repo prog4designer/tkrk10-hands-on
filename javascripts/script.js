@@ -33,8 +33,6 @@ $(function(){
 
 
 
-  var selectedTarget = $("#support").find(".pickto").find("li").first();
-  selectedTarget.addClass("selected");
 
   $("#support").delay(500).slideUp( 250, 'swing' );
 
@@ -44,32 +42,6 @@ $(function(){
   // ***************
 
   // eventは機能ごとで発行すること
-  $(document).on("keydown", pickertoggle);
-
-  $("header").on("click", pickertoggle);
-
-  $("#support").find(".pickto").find("li").on("click", function(){
-    var t = $(this);
-    t.parent().find("li").removeClass("selected");
-    t.addClass("selected");
-    selectedTarget=t;
-  });
-
-  $("#support").find(".color-sample").find("li").on("click", function(){
-    var t = $(this);
-    var targets = selectedTarget.data("target").split("_");
-    var type = selectedTarget.data("type");
-    var color = t.text();
-
-    var len = targets.length;
-    for(var i = 0; i < len; i++){
-      if(targets[i] === "h1"){
-        $(targets[i]).not("#logo").css(type, color);
-      }else{
-        $(targets[i]).css(type, color);
-      }
-    }
-  });
 
 
   // ***************
@@ -134,12 +106,43 @@ $(function(){
     // set events
     this.setEvents = function(){
       // とりあえず実装
+      var selectedTarget = $("#support").find(".pickto").find("li").first();
+      selectedTarget.addClass("selected");
+
       $el = $("#support").find(".color-sample").find("li");
+
       $el.on("click", function(){
         var t = $(this);
         var color = t.text();
         var _key = selectedTarget.data('key');
         self.setHashes( _key, color.substring(1) );
+      });
+
+      $(document).on("keydown", pickertoggle);
+
+      $("header").on("click", pickertoggle);
+
+      $("#support").find(".pickto").find("li").on("click", function(){
+        var t = $(this);
+        t.parent().find("li").removeClass("selected");
+        t.addClass("selected");
+        selectedTarget=t;
+      });
+
+      $("#support").find(".color-sample").find("li").on("click", function(){
+        var t = $(this);
+        var targets = selectedTarget.data("target").split("_");
+        var type = selectedTarget.data("type");
+        var color = t.text();
+
+        var len = targets.length;
+        for(var i = 0; i < len; i++){
+          if(targets[i] === "h1"){
+            $(targets[i]).not("#logo").css(type, color);
+          }else{
+            $(targets[i]).css(type, color);
+          }
+        }
       });
     };
   }
