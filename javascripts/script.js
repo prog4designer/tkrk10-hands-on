@@ -8,7 +8,7 @@ $(function(){
 
   // ec = extend color code / 拡張で読み込まれるカラーコード。,区切りで複数可能
   // lg = logo color / 現在のlogo色。状態保存用。複数不可。
-  // h = heading color / 現在のh1...h6の色。状態保存用。複数不可。
+  // h = heading color / 現在のh2...h6の色。状態保存用。複数不可。
   // hd = header bg color / 現在のヘッダーの背景色。状態保存用。複数不可。
   // ct = contents bg color / 現在のサイトの背景色。状態保存用。複数不可。
   var HASH_KEY = {
@@ -177,7 +177,7 @@ $(function(){
     // user color paint targets
     var PAINT_TARGETS = {
       LOGO: '#logo',
-      HEADING: 'h1_h2_h3_h4_h5_h6',
+      HEADING: 'h2_h3_h4_h5_h6',
       TEXT: '#text_p_a',
       HEADER: '#header',
       CONTENTS: '#contents'
@@ -225,7 +225,7 @@ $(function(){
         if( target == '#logo' ){
           $(this).attr('data-key', HASH_KEY.LOGO);
 
-        } else if ( target == 'h1_h2_h3_h4_h5_h6' ){
+        } else if ( target == 'h2_h3_h4_h5_h6' ){
           $(this).attr('data-key', HASH_KEY.HEADING);
 
         } else if ( target == '#text_p_a' ){
