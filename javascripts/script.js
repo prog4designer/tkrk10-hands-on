@@ -31,17 +31,7 @@ $(function(){
   extendColors.setEvents( HASH_KEY );
   urlCnt.setEvents();
 
-
-
-
-  $("#support").delay(500).slideUp( 250, 'swing' );
-
-
-  // ***************
-  // events
-  // ***************
-
-  // eventは機能ごとで発行すること
+  $( '#support' ).delay( 500 ).slideUp( 250, 'swing' );
 
 
   // ***************
@@ -57,6 +47,7 @@ $(function(){
       var args = new Object();
       var query = location.search.substring(1);
       var pairs = query.split('&');
+
       for( var i = 0; i < pairs.length; i++ ) {
         var pos = pairs[i].indexOf('=');
         if( pos == -1 ) continue;
@@ -65,6 +56,7 @@ $(function(){
         value = decodeURIComponent( value );
         args[ argname ] = value;
       }
+
       return args;
     };
 
@@ -73,6 +65,7 @@ $(function(){
       var args = new Object();
       var hash = location.hash.substring(1);
       var pairs = hash.split('&');
+
       for( var i = 0; i < pairs.length; i++ ) {
         var pos = pairs[i].indexOf('=');
         if( pos == -1 ) continue;
@@ -81,9 +74,11 @@ $(function(){
         value = decodeURIComponent( value );
         args[ argname ] = value;
       }
+
       if( hashesName != undefined ){
         args = args[ hashesName ];
       }
+
       return args;
     };
 
@@ -177,56 +172,65 @@ $(function(){
     // get extend colors
     this._getExtendColors = function( HASH_KEY ){
       var colors = null;
+
       if( location.hash == '' ){
         colors = _defaultColors;
+
       } else {
         // get URL hashes
         var key = HASH_KEY.EXTEND;
         var hashes = urlCnt.getHashes( key );
+
         if( hashes == undefined ){
           colors = _defaultColors;
+
         } else {
           hashes = hashes + ',fff,000';
           colors = hashes.split(',');
         }
       }
+
       return colors;
     };
 
     // create color list
     this._createColorList = function( ary ){
       var colors = ary;
-      var $lists = $('<ul/>').addClass( listsClass );
+      var $lists = $( '<ul/>' ).addClass( listsClass );
+
       $.each( colors, function( i ){
         var code = adjustColorCode( colors[ i ] );
-        var $list = $('<li/>');
-        $list.css('background-color', code);
+        var $list = $( '<li/>' );
+
+        $list.css( 'background-color', code );
         $list.text( code );
         $lists.append( $list );
       });
+
       return $lists;
     };
 
     // set hash key
     this._setHashKey = function( HASH_KEY ){
       // とりあえず実装
-      var $lists = $('#support').find('.pickto li').each(function(){
-        var target = $(this).data('target');
+      $( '#support' ).find( '.pickto li' ).each(function(){
+        var $this = $( this );
+        var target = $this.data( 'target' );
 
         if( target == '#logo' ){
-          $(this).attr('data-key', HASH_KEY.LOGO);
+          $this.attr( 'data-key', HASH_KEY.LOGO );
 
         } else if ( target == 'h2_h3_h4_h5_h6' ){
-          $(this).attr('data-key', HASH_KEY.HEADING);
+          $this.attr( 'data-key', HASH_KEY.HEADING );
 
         } else if ( target == '#text_p_a' ){
-          $(this).attr('data-key', HASH_KEY.TEXT);
+          $this.attr( 'data-key', HASH_KEY.TEXT );
 
         } else if ( target == '#header' ){
-          $(this).attr('data-key', HASH_KEY.HEADER);
+          $this.attr( 'data-key', HASH_KEY.HEADER );
 
         } else if ( target == '#contents' ){
-          $(this).attr('data-key', HASH_KEY.CONTENTS);
+          $this.attr( 'data-key', HASH_KEY.CONTENTS );
         }
       });
     };
@@ -288,7 +292,7 @@ $(function(){
 
     // set events
     this.setEvents = function( HASH_KEY ){
-      $el = $(window).on( 'popstate', function( e ){
+      $el = $( window ).on( 'popstate', function( e ){
         self._setUserColors( HASH_KEY );
       });
     };
@@ -296,9 +300,9 @@ $(function(){
 
 
   // #support toggle
-  function pickertoggle(e){
-    if(e.type === "click" || e.keyCode == 80){
-      $("#support").slideToggle( 250, 'swing' );
+  function pickertoggle( e ){
+    if( e.type === 'click' || e.keyCode == 80 ){
+      $( '#support' ).slideToggle( 250, 'swing' );
     }
   }
 
