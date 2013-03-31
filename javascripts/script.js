@@ -36,11 +36,7 @@ $(function(){
   var selectedTarget = $("#support").find(".pickto").find("li").first();
   selectedTarget.addClass("selected");
 
-  var support = $("#support");
-  support.prependTo("body");
-  console.log(support);
-
-  support.delay(500).slideUp( 250, 'swing' );
+  $("#support").delay(500).slideUp( 250, 'swing' );
 
 
   // ***************
