@@ -106,43 +106,35 @@ $(function(){
     // set events
     this.setEvents = function(){
       // とりあえず実装
-      var selectedTarget = $("#support").find(".pickto").find("li").first();
-      selectedTarget.addClass("selected");
+      var selectedName = 'selected';
 
-      $el = $("#support").find(".color-sample").find("li");
+      var $support = $( '#support' );
+      var $selectedTarget = $support.find( '.' + selectedName );
 
-      $el.on("click", function(){
-        var t = $(this);
-        var color = t.text();
-        var _key = selectedTarget.data('key');
-        self.setHashes( _key, color.substring(1) );
+      $( document ).on( 'keydown', pickertoggle );
+      $( 'header' ).on( 'click', pickertoggle );
+
+      $support.find( '.pickto li' ).on( 'click', function(){
+        var $this = $( this );
+        $selectedTarget.removeClass( selectedName );
+        $this.addClass( selectedName );
+        $selectedTarget = $this;
       });
 
-      $(document).on("keydown", pickertoggle);
+      var $colorSampleList = $support.find( '.color-sample li' );
 
-      $("header").on("click", pickertoggle);
+      $colorSampleList.on( 'click', function(){
+        var $this = $( this );
+        var colorCode = $this.text();
 
-      $("#support").find(".pickto").find("li").on("click", function(){
-        var t = $(this);
-        t.parent().find("li").removeClass("selected");
-        t.addClass("selected");
-        selectedTarget=t;
-      });
+        var targets = $selectedTarget.data( 'target' ).split( '_' );
+        var type = $selectedTarget.data( 'type' );
+        $.each( targets, function( i ){
+          $( targets[ i ] ).css( type, colorCode );
+        });
 
-      $("#support").find(".color-sample").find("li").on("click", function(){
-        var t = $(this);
-        var targets = selectedTarget.data("target").split("_");
-        var type = selectedTarget.data("type");
-        var color = t.text();
-
-        var len = targets.length;
-        for(var i = 0; i < len; i++){
-          if(targets[i] === "h1"){
-            $(targets[i]).not("#logo").css(type, color);
-          }else{
-            $(targets[i]).css(type, color);
-          }
-        }
+        var key = $selectedTarget.data( 'key' );
+        self.setHashes( key, colorCode.substring( 1 ) );
       });
     };
   }
