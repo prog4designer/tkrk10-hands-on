@@ -29,7 +29,6 @@ $(function(){
 
   extendColors.render( HASH_KEY );
   extendColors.setEvents( HASH_KEY );
-  urlCnt.setEvents();
 
   $( '#support' ).delay( 500 ).slideUp( 250, 'swing' );
 
@@ -97,41 +96,6 @@ $(function(){
 
       location.hash = ary.join( '&' );
     };
-
-    // set events
-    this.setEvents = function(){
-      // とりあえず実装
-      var selectedName = 'selected';
-
-      var $support = $( '#support' );
-      var $selectedTarget = $support.find( '.' + selectedName );
-
-      $( document ).on( 'keydown', pickertoggle );
-      $( 'header' ).on( 'click', pickertoggle );
-
-      $support.find( '.pickto li' ).on( 'click', function(){
-        var $this = $( this );
-        $selectedTarget.removeClass( selectedName );
-        $this.addClass( selectedName );
-        $selectedTarget = $this;
-      });
-
-      var $colorSampleList = $support.find( '.color-sample li' );
-
-      $colorSampleList.on( 'click', function(){
-        var $this = $( this );
-        var colorCode = $this.text();
-
-        var targets = $selectedTarget.data( 'target' ).split( '_' );
-        var type = $selectedTarget.data( 'type' );
-        $.each( targets, function( i ){
-          $( targets[ i ] ).css( type, colorCode );
-        });
-
-        var key = $selectedTarget.data( 'key' );
-        self.setHashes( key, colorCode.substring( 1 ) );
-      });
-    };
   }
 
 
@@ -140,6 +104,8 @@ $(function(){
     var self = this;
     var renderTarget = '#support';
     var listsClass = 'color-sample';
+
+    var $support = $( renderTarget );
 
     // default colors
     var _defaultColors = [
@@ -276,6 +242,13 @@ $(function(){
       });
     };
 
+    // #support toggle
+    this._pickertoggle = function( e ){
+      if( e.type === 'click' || e.keyCode == 80 ){
+        $support.slideToggle( 250, 'swing' );
+      }
+    };
+
     // render
     this.render = function( HASH_KEY ){
       // render color list
@@ -292,18 +265,38 @@ $(function(){
 
     // set events
     this.setEvents = function( HASH_KEY ){
-      $el = $( window ).on( 'popstate', function( e ){
+      $( window ).on( 'popstate', function( e ){
         self._setUserColors( HASH_KEY );
       });
+      $( window ).on( 'keydown', self._pickertoggle );
+      $( '#header' ).on( 'click', self._pickertoggle );
+
+      var selectedName = 'selected';
+      var $selectedTarget = $support.find( '.' + selectedName );
+
+      $support.find( '.pickto li' ).on( 'click', function(){
+        var $this = $( this );
+        $selectedTarget.removeClass( selectedName );
+        $this.addClass( selectedName );
+        $selectedTarget = $this;
+      });
+
+      var $colorSampleList = $support.find( '.color-sample li' );
+
+      $colorSampleList.on( 'click', function(){
+        var $this = $( this );
+        var colorCode = $this.text();
+
+        var targets = $selectedTarget.data( 'target' ).split( '_' );
+        var type = $selectedTarget.data( 'type' );
+        $.each( targets, function( i ){
+          $( targets[ i ] ).css( type, colorCode );
+        });
+
+        var key = $selectedTarget.data( 'key' );
+        urlCnt.setHashes( key, colorCode.substring( 1 ) );
+      });
     };
-  }
-
-
-  // #support toggle
-  function pickertoggle( e ){
-    if( e.type === 'click' || e.keyCode == 80 ){
-      $( '#support' ).slideToggle( 250, 'swing' );
-    }
   }
 
 
